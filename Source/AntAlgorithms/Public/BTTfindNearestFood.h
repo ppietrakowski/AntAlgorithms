@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "BehaviorTree/BTTaskNode.h"
+#include "AntFood.h"
+#include <AIController.h>
 #include "BTTfindNearestFood.generated.h"
 
 /**
@@ -14,7 +16,7 @@ class ANTALGORITHMS_API UBTTfindNearestFood : public UBTTaskNode
 {
 	GENERATED_BODY()
 public:
-
+	EBTNodeResult::Type ExecuteTask(UBehaviorTreeComponent& OwnerComponent, uint8* NodeMemory) override;
 private:
 
 };
