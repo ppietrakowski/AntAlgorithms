@@ -7,7 +7,7 @@
 #include "AntFood.generated.h"
 
 // This class does not need to be modified.
-UINTERFACE(MinimalAPI)
+UINTERFACE(MinimalAPI, Blueprintable)
 class UAntFood : public UInterface
 {
 	GENERATED_BODY()
@@ -22,4 +22,19 @@ class ANTALGORITHMS_API IAntFood
 
 	// Add interface functions to this class. This is the class that will be inherited to implement this interface.
 public:
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Simulation")
+	FVector GetLocationInWorld() const;
+	
+	virtual FVector GetLocationInWorld_Implementation() const
+	{
+		return FVector();
+	}
+
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable, Category = "Simulation")
+	float GetPheromoneStrength() const;
+
+	virtual float GetPheromoneStrength_Implementation() const
+	{
+		return 0.0f;
+	}
 };
