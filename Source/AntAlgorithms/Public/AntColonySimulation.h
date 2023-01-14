@@ -35,14 +35,34 @@ public:
 		return DistanceStrength;
 	}
 
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FORCEINLINE float GetEvaporationRate() const
+	{
+		return EvaporationRate;
+	}
+
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	FORCEINLINE float GetEvaporationTime() const
+	{
+		return EvaporationTime;
+	}
+
 	UFUNCTION(BlueprintCallable)
 	void SetDistanceStrength(float NewDistanceStrength);
 
 	UFUNCTION(BlueprintCallable)
 	void SetPheromoneStrength(float NewPheromoneStrength);
+
+	UFUNCTION(BlueprintCallable)
+	void SetEvaporationRate(float NewEvaporationRate);
+
+	UFUNCTION(BlueprintCallable)
+	void SetEvaporationTime(float NewEvaporationTime);
 private:
 	float DistanceStrength;
 	float PheromoneStrength;
+	float EvaporationRate;
+	float EvaporationTime;
 
 	bool bChangedParameters;
 };
